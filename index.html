@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Tower of Hanoi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="index.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Ruluko|Shrikhand" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+
+</head>
+<body>
+    <header>
+        <!--HEader that has the title of the page  -->
+        <h1>Tower of Hanoi</h1>
+    </header>
+    <div class="tracker">
+        <p>sonini tanlang</br>
+            <select id = "drop" class = "numDisks" onchange="newGame()">
+            <option id ="d3" selected>3</option>
+            <option id ="d4">4</option>
+            <option id ="d5">5</option>
+            <option id ="d6">6</option>
+            <option id ="d7">7</option>
+            <option id ="d8">8</option>
+            </select>
+        </p>
+
+        <!-- Counter at the top of the page also a portion that tells the minimum amount of moves -->
+        <div><p>qadam qildiz</p>
+            <div id="counter">0</div>
+        </div>
+        <div><p>eng kam qadamlar soni</p>
+            <div id="minimum">0</div>
+        </div>
+    </div>
+    <h2>Game</h2>
+    <div = id="modal">
+        <div id="modal-textbox">
+            <h2>Congratulations</h2>
+            <!-- Paragraph added by JS -->
+        </div>
+    </div>
+        <div class="board">
+            <!-- The game board will need to have three towers that the disks can move around -->
+            <div class="tower" id="first">
+
+            </div>
+            <div class="tower" id="second">
+                
+            </div>
+            <div class="tower" id="third">
+
+            </div>
+        </div>
+    <!-- reset button -->
+    <button class="reset" onclick="newGame()">Reset</button>
+    <button class="show" onclick="show()">Show (how)</button>
+    <h2>Qanday qilib o'ynash mumkin?</h2>
+    <div class="rules">
+        <!-- Rules to be listed under the game board -->
+        <p>Xanoy minorasining maqsadi disklarni chapdagi minoradan o'ngdagi minoraga o'tkazishdir. 3 ta oddiy qoida mavjud</p>
+        <ul>
+            <li>Bir vaqtning o'zida faqat bitta diskni ko'chirish mumkin</li>
+            <li>Har bir harakat yuqori diskni bir minoradan boshqa minoraning tepasiga yoki bo'sh minoraga ko'chirishdan iborat.</li>
+            <li>Hech qanday diskni kichikroq diskning ustiga qo'yish mumkin emas</li>
+        </ul>
+    </div>
+    
+    <footer>
+        <!-- A footer for links and signature -->
+        <h5>Azizbek Husanov Mustaqil Ish uchun</h5>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
