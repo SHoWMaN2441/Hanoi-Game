@@ -61,10 +61,10 @@ function winner() {
     $endGame.append(para);
     counter === minMoves
       ? $("#winner").text(
-          `You cleared the tower in ${counter} moves!! That is the fewest possible with ${diskSelector} disks.`
+          `Siz minorani ${counter} harakatda o'tqazdiz! Bu ${diskSelector} disklari bilan mumkin bo'lgan eng kam.`
         )
       : $("#winner").text(
-          `You cleared the tower in ${counter} moves! Try to do it again in fewer moves. The fewest to solve ${diskSelector} disks is ${minMoves} moves.`
+          `Siz minorani ${counter} yurish bilan tozaladingiz! Buni yana kamroq harakatlar bilan bajarishga harakat qiling. ${diskSelector} disklarini hal qilish uchun eng kami ${minMoves} ta harakatdir.`
         );
     const closeModal = () => {
       $modal.css("display", "none");
