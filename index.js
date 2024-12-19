@@ -1,5 +1,4 @@
-// setting the towers and disk vars
-
+// chaqirib olish
 const tower1 = document.querySelector("#first");
 const tower2 = document.querySelector("#second");
 const tower3 = document.querySelector("#third");
@@ -7,15 +6,13 @@ let diskSelector = 0;
 let minMoves = 0;
 let counter = 0;
 
-//Click event to show highlighted item variable needed to hold a true false value
 let active = false;
 
-//Creating using DOM elements
+//DOM elementlarini qoshish
 function build() {
   const diskDrop = document.getElementById("drop");
   diskSelector = diskDrop.options[diskDrop.selectedIndex].value;
   for (i = 1; i <= diskSelector; i++) {
-    // for loop to build the disks
     let diskDiv = document.createElement("div");
     diskDiv.id = "disk" + i;
     diskDiv.className = "disk";
@@ -27,7 +24,6 @@ function build() {
 build();
 
 let actions = function () {
-  //Stop console message from appearing with empty towers
   if (active === false && this.childElementCount === 0) {
     return;
   } else if (active === this.lastChild) {
@@ -51,11 +47,10 @@ let actions = function () {
     active = false;
   }
 };
-//The listeners are on the parents
 tower1.addEventListener("click", actions);
 tower2.addEventListener("click", actions);
 tower3.addEventListener("click", actions);
-//winner alert
+//winner modalini chiqarish
 function winner() {
   if (tower3.childElementCount == diskSelector) {
     const $modal = $("#modal");
@@ -92,7 +87,6 @@ function newGame() {
 function show() {
   const moves = [];
 
-  // Recursive function to determine the moves
   function hanoi(n, source, target, auxiliary) {
     if (n === 1) {
       moves.push([source, target]);
@@ -103,10 +97,8 @@ function show() {
     hanoi(n - 1, auxiliary, target, source);
   }
 
-  // Determine moves for the current number of disks
   hanoi(diskSelector, "first", "third", "second");
 
-  // Animate the moves
   let moveIndex = 0;
   function animateMoves() {
     if (moveIndex < moves.length) {
@@ -114,25 +106,21 @@ function show() {
       const fromTower = document.getElementById(from);
       const toTower = document.getElementById(to);
 
-      // Move the top disk from the source tower to the target tower
       if (fromTower.lastChild) {
         const disk = fromTower.lastChild;
         toTower.appendChild(disk);
 
-        // Increment the move counter
         counter++;
         document.getElementById("counter").textContent = counter;
       }
 
       moveIndex++;
-      setTimeout(animateMoves, 500); // Delay for better visualization
+      setTimeout(animateMoves, 500);
     } else {
-      // Display the winner modal when the animation is complete
       winner();
     }
   }
 
-  // Reset the game state and start the animation
   newGame();
   animateMoves();
 }
