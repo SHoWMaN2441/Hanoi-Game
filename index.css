@@ -198,7 +198,7 @@ footer {
 
 h5 {
   font-size: 20px;
-  color: rgb(255, 255, 255);
+  color: rgb(240, 168, 168);
 }
 
 /* Default styles (desktop-first approach) are already defined */
@@ -218,7 +218,7 @@ h5 {
   }
 
   .tower {
-    width: 90%;
+    width: 65%;
     height: 200px;
     margin: 5px 0;
   }
