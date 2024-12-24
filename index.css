@@ -201,9 +201,6 @@ h5 {
   color: rgb(240, 168, 168);
 }
 
-/* Default styles (desktop-first approach) are already defined */
-
-/* For tablets and smaller screens */
 @media screen and (max-width: 768px) {
   body {
     width: 90%;
@@ -260,5 +257,8 @@ h5 {
   .rules {
     font-size: 16px;
     padding: 10px;
+  }
+  h5 {
+    margin-top: 250px;
   }
 }
