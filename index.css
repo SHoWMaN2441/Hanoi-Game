@@ -1,10 +1,14 @@
 html {
-  background: linear-gradient(
+  /* background: linear-gradient(
     90deg,
     rgba(79, 155, 233, 1) 22%,
     rgba(57, 51, 172, 1) 53%,
     rgba(14, 14, 144, 1) 78%
-  );
+  ); */
+  background-image: url("./lotte-tower-the-great-view-sky-walk-observatory-98ce4f5270fb5693aaa37a26ebdf18f7.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 body {
   width: 1000px;
@@ -13,7 +17,7 @@ body {
   color: white;
 }
 header {
-  color: rgb(95, 58, 58);
+  color: rgb(78, 63, 63);
   font-family: "Shrikhand", cursive;
   font-size: 30px;
   text-align: center;
@@ -193,5 +197,68 @@ footer {
 }
 
 h5 {
-  font-size: large;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+}
+
+/* Default styles (desktop-first approach) are already defined */
+
+/* For tablets and smaller screens */
+@media screen and (max-width: 768px) {
+  body {
+    width: 90%;
+    margin: auto;
+  }
+
+  .board {
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    left: 0;
+  }
+
+  .tower {
+    width: 90%;
+    height: 200px;
+    margin: 5px 0;
+  }
+
+  .reset,
+  .show {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* For phones and smaller devices */
+@media screen and (max-width: 480px) {
+  header,
+  h2,
+  h5 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .tracker {
+    flex-direction: column;
+    width: 90%;
+    margin: auto;
+  }
+
+  .numDisks,
+  select {
+    margin: 10px auto;
+    width: 90%;
+  }
+
+  #modal-textbox {
+    width: 80%;
+    margin: 50% auto;
+    padding: 10px;
+  }
+
+  .rules {
+    font-size: 16px;
+    padding: 10px;
+  }
 }
